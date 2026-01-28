@@ -1,3 +1,18 @@
 
 .venv/
 __pycache__/
+
+# Ignore datasets
+data/
+dataset/
+datasets/
+
+# Ignore large files
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# Ignore generated files
+__pycache__/
+.ipynb_checkpoints/
