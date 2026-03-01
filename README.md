@@ -52,7 +52,7 @@ Bộ dữ liệu được sử dụng là **New Plant Diseases Dataset**, một 
 
 Trong phần tiền xử lý dữ liệu dạng bảng (Tabular) này, bộ dữ liệu được sử dụng là **Credit Card Transactions Fraud Detection Dataset** của người dùng Kartik Shenoy, được sửa đổi và cập nhật lần cuối vào khoảng 6 năm trước trên nền tảng Kaggle.
 
-* **Đường dẫn**: Credit Card Transactions Fraud Detection Dataset
+* **Đường dẫn**: https://www.kaggle.com/datasets/kartik2112/fraud-detection/data
 
 * **Mô tả khái quát**: Bộ dữ liệu này là một tập dữ liệu mô phỏng các giao dịch thẻ tín dụng, được thu thập để phục vụ cho việc phát triển và đánh giá các thuật toán phát hiện gian lận trong giao dịch (fraud detection). Dữ liệu chứa cả giao dịch hợp lệ (legitimate) và gian lận (fraud) trong một khoảng thời gian xác định, với các đặc trưng mô tả liên quan đến giao dịch, khách hàng và người bán hàng.
 
