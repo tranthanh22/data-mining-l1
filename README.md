@@ -83,6 +83,9 @@ pip install -r requirements.txt
 ```
 ### Bước 3: Tải dataset
 https://drive.google.com/drive/folders/1JiVZounRd6gtzrzboGj5AX1XL4Ei-D_q?usp=sharing
+
+và để theo cấu trúc file như bên trên
+
 ### Bước 3: Mở Jupyter Notebook
 ### Bước 4: Chạy Notebook
 Chạy các notebook theo thứ tự:
