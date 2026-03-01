@@ -26,6 +26,28 @@ Tất cả các bước tiền xử lý được thực hiện bằng Python tro
 
 ### 1. Image Dataset
 
+Bộ dữ liệu được sử dụng là **New Plant Diseases Dataset**, một tập dữ liệu mở rộng dựa trên dự án PlantVillage, chuyên dùng để phát triển các mô hình học máy nhận diện bệnh lý cây trồng thông qua phân tích hình ảnh lá.
+
+* **Nguồn dữ liệu**: [New Plant Diseases Dataset (Kaggle)](https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset)
+* **Mô tả khái quát**: 
+    Bộ dữ liệu cung cấp một cái nhìn toàn diện về sức khỏe cây trồng thông qua hình ảnh màu (RGB). Đây là một tập dữ liệu đã được dán nhãn cẩn thận, mô phỏng các vấn đề nông nghiệp thực tế. Dữ liệu bao gồm các mẫu lá ở trạng thái khỏe mạnh và các trạng thái nhiễm bệnh với nhiều mức độ khác nhau. Việc phân tích bộ dữ liệu này giúp giải quyết bài toán chẩn đoán sớm bệnh tật, giảm thiểu thiệt hại kinh tế trong nông nghiệp.
+* **Đặc điểm & Quy mô**: 
+    * Bao gồm khoảng **87,000 hình ảnh** chất lượng cao.
+    * Ảnh được thu thập trong cả điều kiện kiểm soát (phòng thí nghiệm) và điều kiện thực địa, tạo ra sự đa dạng về nền (background) và độ phức tạp của ảnh.
+* **Phân loại**: 
+    * Được chia thành **38 lớp** (classes) riêng biệt.
+    * Bao gồm **14 loài cây** phổ biến (như táo, việt quất, anh đào, ngô, nho, cam, đào, ớt chuông, khoai tây, mâm xôi, đậu nành, bí ngòi, dâu tây và cà chua).
+    * Phân tách rõ rệt giữa lá khỏe mạnh và lá bị nhiễm **26 loại bệnh** khác nhau (do nấm, vi khuẩn, virus hoặc ve gây ra).
+
+
+
+* **Mục tiêu tiền xử lý**: 
+    Do ảnh gốc có kích thước không đồng nhất và điều kiện ánh sáng khác nhau, các bước tiền xử lý là bắt buộc để đảm bảo tính hội tụ của mô hình:
+    * **Resizing**: Đưa tất cả ảnh về kích thước chuẩn $224 \times 224$ để phù hợp với các kiến trúc CNN hiện đại.
+    * **Data Augmentation**: Sử dụng các phép xoay, lật và điều chỉnh độ sáng để làm phong phú dữ liệu, giúp mô hình chống lại hiện tượng quá khớp (overfitting).
+    * **Normalization**: Áp dụng Z-score hoặc Min-Max scaling để đưa phân phối pixel về khoảng tối ưu, giúp tăng tốc độ huấn luyện.
+    * **Edge Detection**: Trích xuất đặc trưng cạnh (Canny/Sobel) để hỗ trợ mô hình nhận diện các cấu trúc tổn thương đặc trưng trên bề mặt lá.
+
 ### 2. Tabular Dataset
 
 Trong phần tiền xử lý dữ liệu dạng bảng (Tabular) này, bộ dữ liệu được sử dụng là **Credit Card Transactions Fraud Detection Dataset** của người dùng Kartik Shenoy, được sửa đổi và cập nhật lần cuối vào khoảng 6 năm trước trên nền tảng Kaggle.
